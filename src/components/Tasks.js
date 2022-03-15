@@ -1,15 +1,19 @@
 import Task from "./Task"
 
-const Tasks = ({ tasks, onDelete, onToggle }) => {
+const Tasks = ({ tasksArray, onDelete, onToggle,onMarkAsRead }) => {
     return (
         <>
-            {tasks.map((task) => (
-                <Task key={task.id} task={task}
+            {tasksArray.map((taskElement) => (
+
+
+                <Task key={taskElement.id} 
+                    task={taskElement}// id = {integer} text ={string} day = {string} reminder = {boolean} description = {string}
                     onDelete={onDelete}
-                     onToggle={onToggle}
+                    onToggle={onToggle}
+                    onMarkAsRead={onMarkAsRead}
                 />
             ))}
-        </>
+        </> 
     )
 }
 
